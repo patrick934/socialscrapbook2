@@ -301,14 +301,12 @@ eventController.filterForUser = (req, res, next) => {
 
 //delete
 eventController.deleteUsersAndEvents = (req, res, next) => {
-  // console.log("deleteUSER and Events Working")
   let values = Number(req.params.id)
   values = [values]
 
   const deleteUsersAndEvents = queries.deleteUsersAndEvents
   db.query(deleteUsersAndEvents, values)
   .then(data => {
-    // console.log('table minus deleted event: ', data);
     return next();
   })
   .catch(err => {
@@ -321,14 +319,12 @@ eventController.deleteUsersAndEvents = (req, res, next) => {
 }
 
 eventController.deleteInviteEvent = (req, res, next) => {
-  // console.log("deleteUSER and Events Working")
   let values = Number(req.params.id)
   values = [values]
 
   const deleteInviteUsersAndEvents = queries.deleteInviteUsersAndEvents
   db.query(deleteInviteUsersAndEvents, values)
   .then(data => {
-    // console.log('table minus deleted event: ', data);
     return next();
   })
   .catch(err => {
