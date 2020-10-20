@@ -5,6 +5,7 @@ import Navbar from './Navbar.jsx';
 import axios from 'axios';
 import { Card, Button, Col, Row, Container, Modal, Form } from 'react-bootstrap';
 import AddSearchEvent from './AddSearchEvent.jsx';
+import SearchLocationInput from './GoogleSearch.jsx';
 
 // Implemented with hooks throughout
 export default function MainContainer() {
@@ -156,6 +157,7 @@ export default function MainContainer() {
 
   return (
     <div className="myContainer">
+      <SearchLocationInput onChange={() => null} />
       <Navbar user={user} loggedIn={loggedIn} profilePhoto={user.profilephoto}/>
       <div className="container">
         <Container className="header">
